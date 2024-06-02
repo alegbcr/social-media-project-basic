@@ -2,7 +2,7 @@ const express = require("express");
 
 const config = require("../config.js");
 
-const post = require("./components/post/network");
+const post = require("./components/post/network.js");
 
 const errors = require("../network/errors");
 
@@ -20,3 +20,5 @@ app.use(errors);
 app.listen(config.post.port, () =>
   console.log(`Post Server is listenning in port ${config.post.port}`)
 );
+
+module.exports = app;

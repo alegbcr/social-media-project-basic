@@ -4,8 +4,8 @@ const swaggerUi = require("swagger-ui-express");
 const swaggerDoc = require("./swagger.json");
 
 const config = require("../config.js");
-const user = require("./components/user/network");
-const auth = require("./components/auth/network");
+const user = require("./components/user/network.js");
+const auth = require("./components/auth/network.js");
 
 const errors = require("../network/errors");
 
@@ -27,3 +27,5 @@ app.use(errors);
 app.listen(config.api.port, () =>
   console.log(`Server is listenning in port ${config.api.port}`)
 );
+
+module.exports = app;
